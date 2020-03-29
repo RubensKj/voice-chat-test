@@ -1,0 +1,42 @@
+.App {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.App .card {
+  display: flex;
+  flex-direction: column;
+  background: #202024;
+  border: 1px solid #2d2d31;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.App .card button {
+  background: #7159c1;
+  padding: 5px 15px;
+  border-radius: 4px;
+  height: 38px;
+  font: 16px 'Poppins', sans-serif;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.App .card button:first-child {
+  margin-bottom: 15px;
+}
+
+.App .card button:hover {
+  background: #7a61cc;
+  transition: 0.2s background;
+}
+
+.App .card button:disabled {
+  opacity: 0.8;
+  cursor: initial;
+}
