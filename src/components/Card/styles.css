@@ -1,14 +1,4 @@
-.App {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.App .card {
+.card {
   display: flex;
   flex-direction: column;
   background: #202024;
@@ -17,7 +7,7 @@
   padding: 10px 15px;
 }
 
-.App .card button {
+.card button {
   background: #7159c1;
   padding: 5px 15px;
   border-radius: 4px;
@@ -27,16 +17,16 @@
   cursor: pointer;
 }
 
-.App .card button:first-child {
+.card button:first-child {
   margin-bottom: 15px;
 }
 
-.App .card button:hover {
+.card button:hover {
   background: #7a61cc;
   transition: 0.2s background;
 }
 
-.App .card button:disabled {
+.card button:disabled {
   opacity: 0.8;
   cursor: initial;
 }

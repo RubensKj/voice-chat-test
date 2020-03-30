@@ -1,0 +1,5 @@
+peer:
+  image: peerjs/peerjs-server
+  hostname: peerjs
+  ports:
+    - 9000:9000
