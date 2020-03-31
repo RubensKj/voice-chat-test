@@ -15,9 +15,6 @@
   font: 16px 'Poppins', sans-serif;
   color: #FFF;
   cursor: pointer;
-}
-
-.card button:first-child {
   margin-bottom: 15px;
 }
 
@@ -29,4 +26,27 @@
 .card button:disabled {
   opacity: 0.8;
   cursor: initial;
+}
+
+.card .mute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0 !important;
+}
+
+.card .mute svg {
+  margin-right: 5px;
+}
+
+.isMuted {
+  transition: 0.2s opacity;
+}
+
+.card .isMuted {
+  opacity: 0.8;
+}
+
+.card .isMuted:hover {
+  opacity: 1;
 }
