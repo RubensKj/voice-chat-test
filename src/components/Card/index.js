@@ -3,7 +3,7 @@ import Peer from 'peerjs';
 
 import './styles.css';
 
-const peerOptions = { host: '25.50.68.138', port: 9000, path: '/myapp' };
+const peerOptions = { host: 'localhost', port: 9000, path: '/myapp' };
 
 const fakePeer = {
   on(string, callback) {}
