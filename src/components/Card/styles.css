@@ -43,6 +43,10 @@
   transition: 0.2s opacity;
 }
 
+.isMuted:disabled {
+  opacity: 0.8 !important;
+}
+
 .card .isMuted {
   opacity: 0.8;
 }

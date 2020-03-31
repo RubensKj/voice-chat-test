@@ -6,7 +6,7 @@ import './styles.css';
 const peerOptions = { host: 'localhost', port: 9000, path: '/myapp' };
 
 const fakePeer = {
-  on(string, callback) {}
+  on(string, callback) { }
 }
 
 export default function Card({ match }) {
@@ -41,6 +41,10 @@ export default function Card({ match }) {
     let confirmed = window.confirm(call.peer + ' is calling you! Click ok to join the call.');
 
     if (confirmed) {
+      if (typeof getUserMedia !== 'function') {
+        return alert('Browser is not secure so getUserMedia is not allowed.');
+      }
+
       getUserMedia({ video: false, audio: true }, function (stream) {
         call.answer(stream); // Answer the call with an A/V stream.
         call.on('stream', function (anotherStream) {
@@ -86,6 +90,10 @@ export default function Card({ match }) {
       navigator.mozGetUserMedia ||
       navigator.msGetUserMedia);
 
+    if (typeof getUserMedia !== 'function') {
+      return alert('Browser is not secure so getUserMedia is not allowed.');
+    }
+
     getUserMedia({ video: false, audio: true }, (stream) => {
       const call = peerRoom.call(roomId, stream);
       call.on('stream', (anotherStream) => {
@@ -116,7 +124,7 @@ export default function Card({ match }) {
       {canDisconnect && (
         <button onClick={disconnect}>Disconnect</button>
       )}
-      <button onClick={dismute} className={deafen ? 'mute' : 'mute isMuted'}>
+      <button onClick={dismute} className={deafen ? 'mute' : 'mute isMuted'} disabled={remoteStream}>
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c-1.7 0-3 1.2-3 2.6v6.8c0 1.4 1.3 2.6 3 2.6s3-1.2 3-2.6V4.6C15 3.2 13.7 2 12 2z" /><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18.4v3.3M8 22h8" /></svg>
         <span>Mute</span>
       </button>
